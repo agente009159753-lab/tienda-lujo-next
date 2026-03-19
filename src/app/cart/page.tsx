@@ -31,9 +31,9 @@ export default function CartPage() {
             <div className="lg:col-span-2 space-y-6">
               {cart.map((item) => (
                 <div key={item.id} className="flex gap-3 sm:gap-6 border border-gray-100 p-3 sm:p-4 bg-white">
-                  <div className="w-24 h-24 sm:w-32 sm:h-32 bg-gray-50 flex-shrink-0 flex items-center justify-center overflow-hidden mt-1 sm:mt-0">
+                  <Link href={`/product/${item.id}`} className="w-24 h-24 sm:w-32 sm:h-32 bg-gray-50 flex-shrink-0 flex items-center justify-center overflow-hidden mt-1 sm:mt-0 hover:opacity-80 transition cursor-pointer">
                     <img src={item.img} alt={item.name} className="max-w-full max-h-full object-contain p-1 sm:p-2" />
-                  </div>
+                  </Link>
                   
                   <div className="flex-grow flex flex-col justify-between py-1">
                     <div>
