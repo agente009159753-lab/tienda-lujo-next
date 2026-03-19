@@ -5,7 +5,7 @@ import { useCart } from '@/lib/cartContext';
 import Header from '@/components/Header';
 
 export default function CartPage() {
-  const { cart, removeFromCart, cartTotal } = useCart();
+  const { cart, removeFromCart, updateQuantity, cartTotal } = useCart();
 
   const handleCheckout = () => {
     if (cart.length === 0) return;
@@ -42,7 +42,25 @@ export default function CartPage() {
                         <span className="text-sm font-medium sm:hidden whitespace-nowrap">{item.price}</span>
                       </div>
                       <h3 className="text-sm sm:text-xl font-serif mt-1 line-clamp-2 leading-snug">{item.name}</h3>
-                      <p className="text-gray-500 text-xs sm:text-sm mt-1 sm:mt-2">Cantidad: {item.quantity}</p>
+                      <div className="flex items-center gap-2 mt-1 sm:mt-2">
+                        <span className="text-gray-500 text-xs sm:text-sm">Cantidad:</span>
+                        <div className="flex items-center border border-gray-200 rounded">
+                          <button 
+                            onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                            disabled={item.quantity <= 1}
+                            className="w-6 h-6 flex items-center justify-center text-gray-500 hover:bg-gray-100 disabled:opacity-50 transition"
+                          >
+                            -
+                          </button>
+                          <span className="text-xs sm:text-sm w-6 text-center">{item.quantity}</span>
+                          <button 
+                            onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                            className="w-6 h-6 flex items-center justify-center text-gray-500 hover:bg-gray-100 transition"
+                          >
+                            +
+                          </button>
+                        </div>
+                      </div>
                     </div>
                     <button 
                       onClick={() => removeFromCart(item.id)}
