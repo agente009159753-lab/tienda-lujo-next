@@ -11,13 +11,19 @@ export default function Home() {
       {/* MAIN CONTENT */}
       <main>
         {/* HERO SECTION */}
-        <section className="hero">
-          <img src="/img/hero.png" alt="Interior de lujo" className="hero__image" />
-          <div className="hero__overlay"></div>
-          <div className="hero__content animate-fade-in">
-            <h1 className="hero__title">Diseño Extraordinario</h1>
-            <p className="hero__subtitle text-serif">Descubre muebles vintage, arte contemporáneo y joyería fina de los mejores vendedores del mundo.</p>
-            <Link href="/catalog" className="btn btn-primary">Comprar Colección</Link>
+        <section className="relative w-full h-[60vh] md:h-[70vh] lg:h-[85vh] flex items-center justify-center overflow-hidden">
+          <img 
+            src="/img/hero-bg.jpg" 
+            alt="Diseño Extraordinario" 
+            className="absolute inset-0 w-full h-full object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-black/40"></div>
+          <div className="relative z-10 text-center px-4 md:px-8 max-w-4xl mx-auto animate-fade-in text-white">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif mb-4 md:mb-6 leading-tight drop-shadow-md">Diseño Extraordinario</h1>
+            <p className="text-sm md:text-lg lg:text-xl font-light mb-8 max-w-2xl mx-auto drop-shadow-sm">Descubre muebles vintage, arte contemporáneo y joyería fina de los mejores vendedores del mundo.</p>
+            <Link href="/catalog" className="inline-block bg-white text-black px-8 py-3 md:px-10 md:py-4 text-sm md:text-base uppercase tracking-widest font-medium hover:bg-gray-100 transition-colors duration-300">
+              Comprar Colección
+            </Link>
           </div>
         </section>
 
