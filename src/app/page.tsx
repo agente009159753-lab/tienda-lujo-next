@@ -21,7 +21,7 @@ export default function Home() {
           <div className="relative z-10 text-center px-4 md:px-8 max-w-4xl mx-auto animate-fade-in text-white">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif mb-4 md:mb-6 leading-tight drop-shadow-md">Diseño Extraordinario</h1>
             <p className="text-sm md:text-lg lg:text-xl font-light mb-8 max-w-2xl mx-auto drop-shadow-sm">Descubre muebles vintage, arte contemporáneo y joyería fina de los mejores vendedores del mundo.</p>
-            <Link href="/catalog" className="inline-block bg-white text-black px-8 py-3 md:px-10 md:py-4 text-sm md:text-base uppercase tracking-widest font-medium hover:bg-gray-100 transition-colors duration-300">
+            <Link href="/catalog" className="inline-block bg-black text-white px-8 py-3 md:px-10 md:py-4 text-sm md:text-base uppercase tracking-widest font-medium hover:bg-gray-800 transition-colors duration-300 shadow-lg">
               Comprar Colección
             </Link>
           </div>
