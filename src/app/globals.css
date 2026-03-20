@@ -237,6 +237,22 @@ button {
   display: none;
 }
 
+@media (max-width: 767px) {
+  .header__nav--open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: var(--header-height);
+    left: 0;
+    width: 100%;
+    background-color: var(--color-white);
+    padding: var(--spacing-md);
+    box-shadow: var(--shadow-md);
+    border-top: 1px solid var(--color-gray-200);
+    gap: var(--spacing-sm);
+  }
+}
+
 @media (min-width: 768px) {
   .header__nav {
     display: flex;
@@ -259,6 +275,17 @@ button {
   display: flex;
   align-items: center;
   gap: var(--spacing-sm);
+}
+
+.mobile-menu-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-black);
+}
+
+.mobile-menu-btn:hover {
+  color: var(--color-accent);
 }
 
 .cart-icon-wrapper {
