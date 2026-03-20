@@ -277,11 +277,13 @@ button {
   gap: var(--spacing-sm);
 }
 
-.mobile-menu-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-black);
+@media (max-width: 767px) {
+  .mobile-menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-black);
+  }
 }
 
 .mobile-menu-btn:hover {
