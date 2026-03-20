@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 export default function Login() {
   const router = useRouter();
@@ -44,7 +45,7 @@ export default function Login() {
           </button>
         </form>
         <div className="mt-8 text-center">
-           <a href="/" className="text-sm text-gray-400 hover:text-black dark:hover:text-white transition-colors border-b border-transparent hover:border-black dark:hover:border-white pb-1">Volver a la Tienda Pública</a>
+           <Link href="/" className="text-sm text-gray-400 hover:text-black dark:hover:text-white transition-colors border-b border-transparent hover:border-black dark:hover:border-white pb-1">Volver a la Tienda Pública</Link>
         </div>
       </div>
     </div>

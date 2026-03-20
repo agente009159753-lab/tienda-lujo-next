@@ -8,6 +8,7 @@ export default function Catalog() {
   const [products, setProducts] = useState<Product[]>([]);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setProducts(getProducts());
   }, []);
 

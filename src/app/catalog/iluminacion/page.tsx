@@ -9,6 +9,7 @@ export default function IluminacionCatalog() {
 
   useEffect(() => {
     const all = getProducts();
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setProducts(all.filter(p => p.category === 'iluminacion'));
   }, []);
 

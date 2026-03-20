@@ -18,6 +18,7 @@ export default function ProductDetail({ params }: { params: Promise<{ id: string
     // We fetch from our client-side localStorage DB
     const foundProduct = getProductById(resolvedParams.id);
     if (foundProduct) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setProduct(foundProduct);
       setSelectedImage(foundProduct.img);
     }

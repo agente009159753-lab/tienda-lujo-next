@@ -28,6 +28,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     const savedCart = localStorage.getItem('jhdibs_cart');
     if (savedCart) {
       try {
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setCart(JSON.parse(savedCart));
       } catch (e) {
         console.error("Cart parse error:", e);

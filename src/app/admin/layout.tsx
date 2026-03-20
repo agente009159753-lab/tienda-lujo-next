@@ -1,6 +1,7 @@
 'use client';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   const router = useRouter();
@@ -11,6 +12,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
     if (!isAdmin) {
       router.push('/login');
     } else {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setIsAuth(true);
     }
   }, [router]);
@@ -23,10 +25,10 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         <div>
            <h2 className="text-2xl font-serif font-bold mb-8 text-black dark:text-white">JHDibs Admin</h2>
            <nav className="flex flex-col gap-4">
-             <a href="/admin" className="text-sm font-medium hover:text-accent transition-colors">Dashboard</a>
-             <a href="/admin" className="text-sm font-medium hover:text-accent transition-colors">Productos</a>
-             <a href="/admin" className="text-sm font-medium hover:text-accent transition-colors">Órdenes</a>
-             <a href="/" className="text-sm font-medium text-gray-400 mt-8 hover:text-black dark:hover:text-white transition-colors">&larr; Volver a Tienda Pública</a>
+             <Link href="/admin" className="text-sm font-medium hover:text-accent transition-colors">Dashboard</Link>
+             <Link href="/admin" className="text-sm font-medium hover:text-accent transition-colors">Productos</Link>
+             <Link href="/admin" className="text-sm font-medium hover:text-accent transition-colors">Órdenes</Link>
+             <Link href="/" className="text-sm font-medium text-gray-400 mt-8 hover:text-black dark:hover:text-white transition-colors">&larr; Volver a Tienda Pública</Link>
            </nav>
         </div>
         <button onClick={() => { localStorage.removeItem('esAdmin'); router.push('/'); }} className="text-sm font-medium text-red-500 hover:text-red-700 text-left transition-colors">

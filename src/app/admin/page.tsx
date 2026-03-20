@@ -11,14 +11,14 @@ export default function AdminDashboard() {
   const [editingId, setEditingId] = useState<number | null>(null);
   const [successMsg, setSuccessMsg] = useState('');
 
+  const refreshProducts = () => {
+    setProducts(getProducts());
+  };
+
   // Load products on mount
   useEffect(() => {
     refreshProducts();
   }, []);
-
-  const refreshProducts = () => {
-    setProducts(getProducts());
-  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
