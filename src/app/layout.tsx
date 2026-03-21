@@ -5,6 +5,9 @@ import { CartProvider } from "@/lib/cartContext";
 export const metadata: Metadata = {
   title: "JHDibs | Muebles, Arte & Joyería de Lujo",
   description: "Descubre muebles vintage, arte contemporáneo y joyería fina de los mejores vendedores del mundo.",
+  icons: {
+    icon: '/favicon.ico?v=' + new Date().getTime(),
+  },
 };
 
 export default function RootLayout({
