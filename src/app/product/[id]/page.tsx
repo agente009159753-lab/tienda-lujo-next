@@ -25,11 +25,22 @@ export default function ProductDetail({ params }: { params: Promise<{ id: string
     setLoading(false);
   }, [resolvedParams.id]);
 
-  const handleAddToCart = () => {
+  const handleAddToCart = async () => {
     if (product) {
       addToCart(product);
       setShowToast(true);
       setTimeout(() => setShowToast(false), 3000);
+      
+      // Notificar al bot local de WhatsApp
+      try {
+        await fetch('http://localhost:3001/notify-cart', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ producto: product.name, precio: product.price })
+        });
+      } catch (e) {
+        console.error('Bot no disponible, ignorando alerta.');
+      }
     }
   };
 
