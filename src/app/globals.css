@@ -97,7 +97,7 @@ button {
 /* =========================================
    Typography Utilities
    ========================================= */
-.text-serif { font-family: var(--font-serif); }
+.font-serif { font-family: var(--font-serif) !important; }
 .text-sans { font-family: var(--font-sans); }
 .text-xs { font-size: 0.75rem; }
 .text-sm { font-size: 0.875rem; }
@@ -419,10 +419,12 @@ button {
 }
 
 .product-card__title {
-  font-family: 'Macha', sans-serif;
-  font-size: 1rem;
-  font-weight: 100;
-  color: var(--color-black);
+  font-family: 'Macha', var(--font-sans);
+  font-size: 0.9375rem; /* 15px */
+  font-weight: 300;
+  color: var(--color-gray-600, #52525b); /* Lighter gray/black to match image */
+  line-height: 1.4;
+  margin-top: 0.25rem;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   line-clamp: 2;
