@@ -32,12 +32,21 @@ export default function ProductCard({ product }: { product: Product }) {
         setCurrentImageIndex(0); // Reset on leave
       }}
     >
-      <div className="product-card__image-wrapper relative">
-        <img 
-          src={images[currentImageIndex]} 
-          alt={product.name} 
-          className="product-card__image transition-opacity duration-300 object-cover w-full h-full absolute top-0 left-0" 
-        />
+      <div className="product-card__image-wrapper relative overflow-hidden">
+        <div 
+          className="flex w-full h-full transition-transform duration-500 ease-in-out"
+          style={{ transform: `translateX(-${currentImageIndex * 100}%)` }}
+        >
+          {images.map((imgSrc, idx) => (
+            <div key={idx} className="w-full h-full flex-shrink-0 relative">
+              <img 
+                src={imgSrc} 
+                alt={`${product.name} ${idx + 1}`} 
+                className="product-card__image object-cover w-full h-full absolute top-0 left-0" 
+              />
+            </div>
+          ))}
+        </div>
         
         {isHovered && images.length > 1 && (
           <>
