@@ -112,6 +112,7 @@ button {
 .font-light { font-weight: 300; }
 .font-normal { font-weight: 400; }
 .font-medium { font-weight: 500; }
+.font-macha { font-family: 'Macha', sans-serif; font-weight: 100; }
 
 .text-center { text-align: center; }
 .text-muted { color: var(--color-gray-500); }
@@ -420,7 +421,7 @@ button {
 .product-card__title {
   font-family: 'Macha', sans-serif;
   font-size: 1rem;
-  font-weight: 300;
+  font-weight: 100;
   color: var(--color-black);
   display: -webkit-box;
   -webkit-line-clamp: 2;

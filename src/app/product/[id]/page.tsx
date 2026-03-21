@@ -112,7 +112,7 @@ export default function ProductDetail({ params }: { params: Promise<{ id: string
           <div className="flex flex-col gap-6">
             <div>
               <span className="text-sm font-bold uppercase tracking-widest text-gray-500">{product.brand}</span>
-              <h1 className="text-4xl md:text-5xl font-serif mt-2 mb-4">{product.name}</h1>
+              <h1 className="text-4xl md:text-5xl font-macha mt-2 mb-4">{product.name}</h1>
               <span className="text-2xl font-light">{product.price}</span>
             </div>
             
